@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+/*  
+    Basically, i need all buttons to have this smooth transition which is also with the 3rd and last (messenger) button. But gradient can't doesn't have transitions so i had       to use opacity. It will be done with ::after or ::before pseudo element but it just doesn't work properly for me..
+*/
+
+:root {
+    /*  Colors  */
+    --facebook: #4267B2;
+    --twitter: #1DA1F2;
+    --instagram: #E1306C;
+    --instagram_gradient: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);;
+    --github: #333;
+    --youtube: #ff0000;
+    --messenger_gradient: linear-gradient(200deg, #fc466b, #3f5efb 90%);
+    --messenger: #8241fb;
+  
+    --background:#4c39b6;
+    /*  Speed of transition (Czech) */
+    --rychlost: 1s;
+  }
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html,body{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background: linear-gradient(315deg,#ffffff 0%,#d7e1ec 74%);
+}
+.wrapper .button{
+    /* display: inline-block; */
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin:0 5px;
+    overflow:hidden;
+    /*background: rgb(255, 255, 255);*/
+    background: var(--background);
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: all var(--rychlost) ease-out;
+
+}
+.wrapper .button:hover{
+    width: 200px;
+
+}
+.wrapper .button .icon{
+   display: inline-block;
+   height: 60px;
+   width: 60px;
+   text-align: center;
+   border-radius: 50px;
+   box-sizing: border-box;
+   line-height: 60px;
+   transition: all var(--rychlost) ease-out;
+   z-index: 1;
+
+}
+.wrapper .button:nth-child(1):hover .icon {
+    background: var(--facebook);
+}
+.wrapper .button:nth-child(2):hover .icon {
+    background: var(--twitter);
+}
+ .wrapper .button:nth-child(3)::before{
+    background: var(--instagram_gradient);
+    content: '';    
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    opacity: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+    transition: opacity var(--rychlost);
+}
+ .wrapper .button:nth-child(3):hover::before {
+/*   applying opacity but it's in the front before the icon. which i don't want to..   */ 
+   opacity: 0.8;
+}
+/*
+.wrapper .button:nth-child(3) .icon {
+    opacity: 0;
+    background: var(--instagram_gradient);
+}
+*/
+.wrapper .button:nth-child(3):hover .icon {
+    opacity:1;
+}
+.wrapper .button:nth-child(4):hover .icon {
+    background: var(--github);
+}
+.wrapper .button:nth-child(5):hover .icon {
+    background: var(--youtube);
+}
+.wrapper .button:nth-child(6):hover .icon {
+    /* background: var(--messenger_gradient); */
+    background: linear-gradient(200deg, #fc466b, #3f5efb 90%);;
+}
+.wrapper .button .icon i{
+    z-index: 10;
+    font-size: 25px;
+    color: black;
+    line-height: 60px;
+    transition: all var(--rychlost) ease-out;
+}
+.wrapper .button:hover .icon i{
+    color: #fff;
+}
+.wrapper .button  span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all var(--rychlost) ease-out;
+
+}
+
+.wrapper .button:nth-child(1) span{
+    color: var(--facebook);
+}
+.wrapper .button:nth-child(2) span{
+    color: var(--twitter);
+}
+.wrapper .button:nth-child(3) span{
+    color: var(--instagram);
+}
+.wrapper .button:nth-child(4) span{
+    color: var(--github);
+}
+.wrapper .button:nth-child(5) span{
+    color: var(--youtube);
+}
+.wrapper .button:nth-child(6) span{
+    color: var(--messenger);
+}
