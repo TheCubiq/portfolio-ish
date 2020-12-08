@@ -75,13 +75,13 @@ html,body{
     border-radius: inherit;
     background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
     content: '';    
-    display: inline-block;
+    display: flex;
     height: 60px;
-    position: initial;
-    top: 0; left: 0;
+    position: relative;
+    transform: 0;
     opacity: 0;
-    width: 20px;
-    z-index: -1;
+    width: 60px;
+    z-index: 1;
     transition: opacity var(--rychlost);
 }
 .wrapper .button:nth-child(3):hover .icon::before{
@@ -100,7 +100,7 @@ html,body{
     background: var(--messenger_gradient);
 }
 .wrapper .button .icon i{
-    font-size: 25px;
+    font-size: 30px;
     color: black;
     line-height: 60px;
     transition: all var(--rychlost) ease-out;
@@ -109,6 +109,7 @@ html,body{
     color: #fff;
     z-index: 100;
 }
+
 .wrapper .button  span{
     font-size: 20px;
     font-weight: 500;
