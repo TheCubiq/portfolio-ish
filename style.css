@@ -71,7 +71,7 @@ html,body{
 .wrapper .button:nth-child(2):hover .icon {
     background: var(--twitter);
 }
- .wrapper .button:nth-child(3)::before{
+ .wrapper .gradient{
     background: var(--instagram_gradient);
     content: '';    
     display: inline-block;
@@ -79,23 +79,16 @@ html,body{
     text-align: center;
     border-radius: 50px;
     box-sizing: border-box;
-    opacity: 0;
+    opacity: 0.5;
     width: 60px;
-    height: 60px;
-    z-index: 1;
+    height: 90px;
+    z-index: 0;
     transition: opacity var(--rychlost);
 }
- .wrapper .button:nth-child(3):hover::before {
-/*   applying opacity but it's in the front before the icon. which i don't want to..   */ 
-   opacity: 0.8;
-}
-/*
-.wrapper .button:nth-child(3) .icon {
-    opacity: 0;
-    background: var(--instagram_gradient);
-}
-*/
+
 .wrapper .button:nth-child(3):hover .icon {
+    background: transparent;
+    z-index: 10;
     opacity:1;
 }
 .wrapper .button:nth-child(4):hover .icon {
