@@ -17,7 +17,7 @@
   
     --background:#ffffff;
     /*  Speed of transition (Czech) */
-    --rychlost: 1s;
+    --rychlost: 0.5s;
     --target: _blank;
   }
 
