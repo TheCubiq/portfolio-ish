@@ -40,7 +40,7 @@ html,body{
     width: 60px;
     float: left;
     margin:0 5px;
-    /* overflow:hidden; */
+    overflow:hidden;
     /*background: rgb(255, 255, 255);*/
     background: var(--background);
     border-radius: 50px;
