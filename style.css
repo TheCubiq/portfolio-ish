@@ -74,10 +74,10 @@ html,body{
 .wrapper .button:nth-child(3) .icon::before{
     border-radius: inherit;
     background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-    content: '';    
-    display: flex;
+    content: '';
+    display: table;
     height: 60px;
-    position: relative;
+    position: absolute;
     opacity: 0;
     width: 60px;
     z-index: 1;
@@ -99,6 +99,8 @@ html,body{
     background: var(--messenger_gradient);
 }
 .wrapper .button .icon i{
+    z-index: 100;
+    position: relative;
     font-size: 30px;
     color: black;
     line-height: 60px;
