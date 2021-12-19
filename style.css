@@ -29,7 +29,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color:  transparent;
 }
 html,body{
     display: grid;
@@ -178,14 +178,14 @@ html,body{
 .wrapper{
     display: table;
     /* display: grid; */
-    justify-content: center;
+    /* justify-content: center; */
     text-align: center;
     vertical-align: middle;
     /* grid-template-columns: 50px 50px 50px; */
     /* border: 2px solid red; */
     /* padding: 0px 10px; */
-    margin: 100px,100px;
-    align-items: center;
+    /* margin: 10px 0; */
+    /* align-items: center; */
 }
 
 .wrapper .button{
@@ -214,74 +214,64 @@ html,body{
     }
 }
 .wrapper .button .icon{
-   display: inline-block;
    height: 60px;
    width: 60px;
    text-align: center;
-   border-radius: 50px;
-   box-sizing: border-box;
-   line-height: 60px;
-   transition: all var(--rychlost) ease-out;
-   overflow: hidden;
 }
-.wrapper .button:nth-child(1):hover .icon {
+
+.wrapper .button .icon::before{
+    /* border-radius: inherit; */
+    content: '';
+    /* overflow: hidden; */
+    border-radius: 50px;
+    /* display: table-caption; */
+    display: flex;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    opacity: 0;
+    /* z-index: 1; */
+    transition: opacity var(--rychlost);
+}
+
+/* Hover Animation */
+
+.wrapper .button:hover .icon::before{
+    opacity:1;
+}
+
+/* Button Hover Background Colors */
+
+.wrapper .button:nth-child(1) .icon::before {
     background: var(--facebook);
 }
-.wrapper .button:nth-child(2):hover .icon {
+.wrapper .button:nth-child(2) .icon::before {
     background: var(--twitter);
 }
-.wrapper .button:nth-child(3) .icon::before{
-    border-radius: inherit;
-    background-image: var(--instagram_gradient);
-    content: '';
-    overflow: hidden;
-    border-radius: 50px;
-    display: table-caption;
-    height: 60px;
-    position: absolute;
-    opacity: 0;
-    width: 60px;
-    z-index: 1;
-    transition: opacity var(--rychlost);
-}
-.wrapper .button:nth-child(3):hover .icon::before{
-    opacity:1;
-}
-/* .wrapper .button:nth-child(3):hover .icon {
+.wrapper .button:nth-child(3) .icon::before {
     background: var(--instagram_gradient);
-} */
-.wrapper .button:nth-child(4):hover .icon {
+}
+.wrapper .button:nth-child(4) .icon::before {
     background: var(--github);
 }
-.wrapper .button:nth-child(5):hover .icon {
+.wrapper .button:nth-child(5) .icon::before {
     background: var(--youtube);
 }
-.wrapper .button:nth-child(6) .icon::before{
-    border-radius: inherit;
-    background-image: var(--messenger_gradient);
-    content: '';
-    display: table-caption;
-    position: absolute;
-    opacity: 0;
-    height: 60px;
-    width: 60px;
-    z-index: 1;
-    transition: opacity var(--rychlost);
+.wrapper .button:nth-child(6) .icon::before {
+    background: var(--messenger_gradient);
 }
-.wrapper .button:nth-child(6):hover .icon::before{
-    opacity:1;
-}
+
 .wrapper .button .icon i{
-    z-index: 100;
+    /* z-index: 100; */
     position: relative;
     font-size: 23px;
     color: var(--b-accent);
     line-height: 60px;
     transition: all var(--rychlost) ease-out;
 }
+
 .wrapper .button:hover .icon i{
     color: #fff;
-    z-index: 100;
 }
 
 .wrapper .button  span{
@@ -292,6 +282,8 @@ html,body{
     transition: all var(--rychlost) ease-out;
 
 }
+
+/* Button Text Color */
 
 .wrapper .button:nth-child(1) span{
     color: var(--facebook);
