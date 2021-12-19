@@ -1,7 +1,11 @@
 # navicons
 
-Basically, i need all buttons to have this smooth transition which is also with the 3rd and last (messenger) button.
+Everything here's basically done lol
 
-But gradient can't doesn't have transitions so i had to use opacity.
+the whole point of this project was to test if the gradient animations are actually somehow possible only by using css and html.
 
-well, now only to align the span properly.
+it was quite fun
+
+[final site here <3](https://thecubiq.github.io/navicons/)
+
+![preview <3](https://i.imgur.com/jMJqDgp.gif)
