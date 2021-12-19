@@ -30,12 +30,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
 }
-
 html,body{
     display: grid;
     height: 100%;
     width: 100%;
+    min-height:400px;
     place-items: center;
     background: var(--background)
 }
@@ -124,13 +125,6 @@ html,body{
     /* float: left; */
 }
 
-.wrapper{
-    display: table;
-    /* display: grid;
-    justify-content: center; */
-    /* grid-template-columns: 50px 50px 50px; */
-    /* border: 2px solid red; */
-}
 
 .ohraniceni,
 .ohraniceni .img-area{
@@ -140,16 +134,19 @@ html,body{
 }
 
 .ohraniceni{
-    padding: 30px 0px;
+    padding: 30px 30px;
+    margin: 30px;
     /* border: 1px solid red; */
-    width: 600px;
+    /* max-width: 1000px;  */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
 }
+
 .ohraniceni .img-area{
+    /* border: 1px solid red; */
     height: 150px;
     width: 150px;
     border-radius: 100%;
@@ -178,8 +175,23 @@ html,body{
     color: var(--about-color);
     font-size: 16px;
 }
+
+.wrapper{
+    display: table;
+    /* display: grid; */
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    /* grid-template-columns: 50px 50px 50px; */
+    /* border: 2px solid red; */
+    /* padding: 0px 10px; */
+    margin: 100px,100px;
+    align-items: center;
+}
+
 .wrapper .button{
     display: inline-block;
+    text-align: left;
     flex-wrap: wrap;
     height: 60px;
     width: 60px;
@@ -190,11 +202,17 @@ html,body{
     cursor: pointer;
     box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
     transition: all var(--rychlost) ease-out;
-    z-index: -100;
-    /* border: 2px solid rgb(0, 17, 255); */
+    /* z-index: -100; */
+    /* border: 1px solid rgb(0, 17, 255); */
 }
-.wrapper .button:hover{
-    width: 200px;
+
+@media only screen and (min-width: 750px){
+    .ohraniceni{
+        width: 650px;
+    }
+    .wrapper .button:hover{
+        width: 200px;
+    }
 }
 .wrapper .button .icon{
    display: inline-block;
