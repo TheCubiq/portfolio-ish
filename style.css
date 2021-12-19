@@ -23,7 +23,6 @@
     --target: _blank;
   }
 
-
 *{
     transition: all var(--rychlost) ease-out;
     margin: 0;
