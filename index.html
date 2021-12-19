@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>CubiqTheCreator</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/icon/favicon-16x16.png">
+        <script src="darkmodestuff.js"></script>
+        <script src="https://kit.fontawesome.com/96cf917497.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="ohraniceni">
+<body id="body" class="dark-mode">
+    <div class="ohraniceni noselect"> 
         <div class="img-area">
             <div class="inner-area">
-                <img src="https://lh3.googleusercontent.com/a-/AOh14GiAwt027RpdisEipzOgChsQuUVo-WxAxd5NjEPJcA" alt="">
+                    <img src="https://lh3.googleusercontent.com/a-/AOh14GiAwt027RpdisEipzOgChsQuUVo-WxAxd5NjEPJcA" alt="">
             </div>
         </div>
         <div class="name">Cubiq</div>
@@ -54,6 +58,14 @@
                 </a>
             </div>
         </div>
+        <div>
+            <span class=about>Try</span>
+            <label class="switch">
+                <input type="checkbox" checked onchange="toggleDarkLight()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
 </div>           
 </body>
 </html>

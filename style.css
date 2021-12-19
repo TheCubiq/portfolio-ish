@@ -10,8 +10,14 @@
     --youtube: #ff0000;
     --messenger_gradient: linear-gradient(200deg, #fc466b, #3f5efb 90%);
     --messenger: #8241fb;
+
+    --b-accent:rgb(0, 0, 0);
+    --s-button:#fff;
+    --name-color:#31344b;
+    --about-color:#44476a;
   
-    --background:#ffffff;
+    --b-background:#ffffff;
+    --background: linear-gradient(315deg,#ffffff 0%,#d7e1ec 74%);
     /*  Speed of transition (Czech) */
     --rychlost: 0.5s;
     --target: _blank;
@@ -19,18 +25,98 @@
 
 
 *{
+    transition: all var(--rychlost) ease-out;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
 html,body{
     display: grid;
     height: 100%;
     width: 100%;
     place-items: center;
-    background: linear-gradient(315deg,#ffffff 0%,#d7e1ec 74%);
+    background: var(--background)
 }
+
+.dark-mode{
+    --background: linear-gradient(315deg, rgb(24, 26, 27) 0%, rgb(41, 44, 46) 74%);
+    --b-background:#181a1b;
+    --b-accent:#fff;
+    --s-button:#272727;
+    --name-color:#ffffff;
+    --about-color:#838383;
+    --youtube: rgb(255, 56, 56);
+    --github: rgb(78, 78, 78);
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
+
+.switch {
+    position: relative;
+    display: inline-table;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 20px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--b-accent);
+    box-shadow: 0px 10px 10px rgb(0 0 0 / 10%);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--s-button);
+    box-shadow: 0px 10px 10px rgb(0 0 0 / 10%);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(14px);
+    -ms-transform: translateX(14px);
+    transform: translateX(14px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
 
 .alink{
     display: inline-flex;
@@ -39,13 +125,16 @@ html,body{
 }
 
 .wrapper{
-    /* border: 1px solid red; */
     display: table;
+    /* display: grid;
+    justify-content: center; */
+    /* grid-template-columns: 50px 50px 50px; */
+    /* border: 2px solid red; */
 }
 
 .ohraniceni,
 .ohraniceni .img-area{
-    background: var(--background);
+    background: var(--b-background);
     border-radius: 30px;
     box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
 }
@@ -82,11 +171,11 @@ html,body{
 .ohraniceni .name{
     font-size: 23px;
     font-weight: 500;
-    color: #31344b;
+    color: var(--name-color);
 }
 .ohraniceni .about{
     font-weight: 400;
-    color: #44476a;
+    color: var(--about-color);
     font-size: 16px;
 }
 .wrapper .button{
@@ -94,16 +183,15 @@ html,body{
     flex-wrap: wrap;
     height: 60px;
     width: 60px;
-    /* float: left; */
     margin:0 5px;
     overflow:hidden;
-    /*background: rgb(255, 255, 255);*/
-    background: var(--background);
+    background: var(--s-button);
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
     transition: all var(--rychlost) ease-out;
     z-index: -100;
+    /* border: 2px solid rgb(0, 17, 255); */
 }
 .wrapper .button:hover{
     width: 200px;
@@ -170,7 +258,7 @@ html,body{
     z-index: 100;
     position: relative;
     font-size: 23px;
-    color: black;
+    color: var(--b-accent);
     line-height: 60px;
     transition: all var(--rychlost) ease-out;
 }
