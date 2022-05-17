@@ -6,6 +6,6 @@ the whole point of this project was to test if the gradient animations are actua
 
 it was quite fun
 
-[final site here <3](https://thecubiq.github.io/navicons/)
+[final site here <3](https://cubiq.tk)
 
 ![preview <3](https://i.imgur.com/jMJqDgp.gif)
