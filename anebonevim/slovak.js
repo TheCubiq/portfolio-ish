@@ -3,6 +3,8 @@
 // https://www.youtube.com/@RobWebSK
 // a nebo
 
+console.log("kuk");
+
 const allWords = [
 	'achát',
 	'adept',
