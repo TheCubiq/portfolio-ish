@@ -17,13 +17,19 @@
         /* give it a sec */
     }
 
-    body > p::before {
+    body > span {
+        cursor: pointer;
+    }
+
+    body > span::before {
         content: attr(it);
+        pointer-events: none;
+        cursor: default;
     }
 </style>
 
 <body>
-    <p it="nev">🌍</p>
+    <span it="nev">🌍</span>
     <to-co-vis>a nebo nevim</to-co-vis>
 
 <script>
@@ -49,7 +55,7 @@
         return 'nevim'
     }
 
-    const ANSWER = document.querySelector("body > p")
+    const ANSWER = document.querySelector("body > span")
 
     console.log(ANSWER);
 
