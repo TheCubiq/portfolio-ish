@@ -56,6 +56,13 @@
     // ANSWER.innerHTML = everything()
     ANSWER.setAttribute("it", everything())
 
+    ANSWER.onclick = (event) => {
+        let me = "https://www.google.com/search?q="
+        const a = event.target
+        me += a.getAttribute('it');
+        console.log(me);
+    }
+
     // my fav book is
 </script>
 </body>
