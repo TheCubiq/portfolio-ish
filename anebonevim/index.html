@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="slovak.js"></script>
+    <title>měsíc</title>
+</head>
+<style>
+    /* my fav color is */
+        /* don't know */
+    /* maybe pink */
+
+    html, body {
+        /* empty */
+        /* give it a sec */
+    }
+
+    body > span {
+        cursor: pointer;
+    }
+
+    body > span::before {
+        content: attr(it);
+        pointer-events: none;
+        cursor: default;
+    }
+
+    to-co-vis {
+        margin-left: -2ch;
+        background-color: white;
+        /* sorry dochazi cas */
+    }
+</style>
+
+<body>
+    <span it="nev">🌍</span>
+    <br>m
+    <to-co-vis>a nebo nevim</to-co-vis>
+
+<script>
+    let noNet
+    
+    const everything = () => {
+        // you know
+        if (noNet) return "vim"
+
+        // sense here
+
+        let solution = allWords[allWords.length * Math.random() | 0]
+
+        
+        
+        // nejsou
+        return solution
+
+        // todo here
+
+
+
+        return 'nevim'
+    }
+
+    const ANSWER = document.querySelector("body > span")
+
+    console.log(ANSWER);
+
+    // ANSWER.innerHTML = everything()
+    ANSWER.setAttribute("it", everything())
+
+    ANSWER.onclick = (event) => {
+        let me = "https://www.google.com/search?q="
+        const a = event.target
+        me += a.getAttribute('it');
+        window.open(me)
+    }
+
+    // my fav book is
+</script>
+</body>
+
+</html>
