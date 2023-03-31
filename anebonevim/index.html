@@ -16,10 +16,14 @@
         /* empty */
         /* give it a sec */
     }
+
+    body > p::before {
+        content: attr(it);
+    }
 </style>
 
 <body>
-    <p>nevim</p>
+    <p it="nevim">🌍</p>
     <to-co-vis>a nebo nevim</to-co-vis>
 </body>
 
@@ -46,7 +50,10 @@
 
     const ANSWER = document.querySelector("body > p")
 
-    ANSWER.innerHTML = everything()
+    console.log(ANSWER);
+
+    // ANSWER.innerHTML = everything()
+    ANSWER.attributes.getNamedItem("it") = "everything()"
 
     // my fav book is
 </script>
