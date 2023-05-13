@@ -32,20 +32,21 @@
   }
 
 *{
-    transition: all var(--rychlost) ease-out;
+    transition: var(--rychlost) ease-out;
+    transition-property: background, color;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     -webkit-tap-highlight-color:  transparent;
 }
-html,body{
+body {
     display: grid;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     min-height:400px;
     place-items: center;
-    background: var(--background)
+    background: var(--background);
 }
 
 .dark-mode{
